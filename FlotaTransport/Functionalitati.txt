@@ -1,0 +1,52 @@
+Flota de Mijloace de Transport
+
+Deschere generala
+
+Acest proiect reprezinta o aplicatie orientata pe obiecte pentru gestionarea unei flote diverse de mijloace de transport, incluzand autobuze, trenuri si avioane. Aplicatia permite administrarea, monitorizarea si manipularea datelor despre fiecare vehicul, oferind o interfata intuitiva pentru gestionarea flotei.
+
+Functionalitati principale
+
+1. Gestionarea vehiculelor
+
+   * Adaugarea de noi vehicule in flota: autobuze, trenuri sau avioane.
+   * Eliminarea vehiculelor din flota.
+   * Vizualizarea listei complete a vehiculelor disponibile.
+
+2. Informatii detaliate pentru fiecare vehicul
+
+   * Tipul vehiculului (autobuz, tren, avion).
+   * Capacitate (numar de pasageri).
+   * Viteza maxima.
+   * Stare curenta (disponibil, in intretinere, in curs de utilizare).
+   * Alte atribute specifice fiecarui tip de vehicul (ex: linia pentru autobuz, ruta pentru tren, aeroporturile pentru avion).
+
+3. Gestionarea rutelor si programelor
+
+   * Asignarea de trasee sau rute pentru fiecare vehicul.
+
+4. Functionalitati de filtrare si cautare
+
+   * Cautarea vehiculului dupa tip, capacitate sau stare.
+  // * Filtrarea vehiculelor disponibile pentru o anumita ruta sau data.
+  // * Raportarea vehiculelor care necesita intretinere.
+
+5. Extensibilitate
+
+   * Posibilitatea de a adauga noi tipuri de vehicule fara a afecta functionalitatile existente.
+   * Implementarea principiilor OOP (mostenire, polimorfism, incapsulare) pentru a permite extinderea simpla a aplicatiei.
+
+Adaosuri: Rute ca fiind o lista de statii. Un utilizator se poate folosii de flota de transport ca sa gaseasca cum sa ajunga dintr un loc in altu.
+Limitare un schimb de vehicul. + sa adaug un vehicul nou din tipurile existente pe care le am.
+
+Scenarii de utilizare
+
+* Administratorul flotei poate adauga un nou autobuz care va fi alocat unei rute urbane si poate verifica capacitatea acestuia.
+* Operatorul de tren poate actualiza starea unui tren pentru a marca intretinerea preventiva.
+* Managerul companiei aeriene poate cauta avioanele disponibile pentru o anumita cursa si poate simula disponibilitatea acestora.
+
+Avantaje ale aplicatiei
+
+* Centralizeaza informatiile despre toate mijloacele de transport intr-un singur loc.
+* Permite urmarirea starii vehiculelor si planificarea eficienta a rutelor.
+* Ofera flexibilitate si scalabilitate datorita arhitecturii OOP.
+* Poate fi extinsa pentru integrarea de functii avansate, cum ar fi rezervari, management de combustibil sau monitorizare GPS.

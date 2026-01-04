@@ -1,0 +1,33 @@
+Titlu proiect: Flota de transport
+
+Descriere generala:
+Proiectul îsi propune realizarea unei aplicatii C++ care gestioneaza o flota de mijloace de transport precum autobuze, trenuri si avioane. 
+Scopul principal este de a învata utilizarea claselor si a obiectelor, precum si conceptele de baza ale programarii orientate pe obiecte.
+
+Obiective:
+- Definirea unei clase de baze „Vehicul” care contine informatii despre un mijloc de transport.
+- Crearea mai multor obiecte de tip Vehicul si stocarea acestora într-o colectie (vector).
+- Afisarea datelor despre fiecare vehicul din flota.
+- Pe parcursul semestrului, proiectul va fi extins prin adaugarea de noi clase (Autobuz, Tren, Avion) si noi functionalitati.
+
+Functionalitati planificate (versiunea de început):
+1. Adaugarea manuala a vehiculelor în flota de transport.
+2. Afisarea tuturor vehiculelor din flota.
+3. Posibilitatea extinderii cu metode de calcul (ex: costuri, capacitati totale).
+
+Structura proiectului:
+- Clasa Vehicul:
+    - Atribute: id, tip, marca, capacitate
+    - Metode: constructori, set/get, afisare
+
+- Fisier principal (main.cpp):
+    - Creeaza un vector de obiecte Vehicul
+    - Afiseaza informatiile despre vehicule
+
+Tehnologii folosite:
+- Limbaj: C++
+- Mediu de dezvoltare: Visual Studio
+- Paradigma: Programare orientata pe obiecte (OOP)
+
+Concluzie:
+Acest proiect va demonstra întelegerea conceptelor fundamentale din C++ (definirea claselor, obiecte, metode, vectori) si va fi dezvoltat treptat în functie de materia predata la curs si laborator.
