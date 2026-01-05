@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Autobuz::Autobuz(string id, string marca, int capacitate, string linie)
+Autobuz::Autobuz(string id, string marca, int capacitate, int linie)
     : Vehicul(id, "Autobuz", marca, capacitate), linie(linie) {
 }
 

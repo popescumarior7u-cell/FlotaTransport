@@ -3,9 +3,9 @@
 
 class Autobuz : public Vehicul {
 private:
-    string linie;
+    int linie;   
 
 public:
-    Autobuz(string id, string marca, int capacitate, string linie);
-    void afiseaza() const; // metoda normala, fara virtual/override
+    Autobuz(string id, string marca, int capacitate, int linie);
+    void afiseaza() const override; 
 };

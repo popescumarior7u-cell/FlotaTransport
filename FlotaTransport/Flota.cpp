@@ -1,22 +1,23 @@
 #include "Flota.h"
 #include <iostream>
+#include <memory>
 using namespace std;
 
-void Flota::adaugaVehicul(const Vehicul& v) {
+void Flota::adaugaVehicul(shared_ptr<Vehicul> v) {
     vehicule.push_back(v);
 }
 
 void Flota::afiseazaFlota() const {
-    cout << "\n--- Lista vehiculelor din flota ---\n";
+    cout << "--- Lista vehiculelor din flota ---\n";
     for (const auto& v : vehicule) {
-        v.afiseaza();
+        v->afiseaza(); // POLIMORFISM
     }
 }
 
 int Flota::getNumarVehicule() const {
     return (int)vehicule.size();
 }
-#include "Flota.h"
+
 
 // Constructor implicit
 Flota::Flota() {

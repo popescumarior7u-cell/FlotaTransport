@@ -1,8 +1,10 @@
 #include <iostream>
+#include <memory>
 #include "Flota.h"
 #include "Autobuz.h"
 #include "Tren.h"
 #include "Avion.h"
+
 using namespace std;
 
 int main() {
@@ -10,19 +12,24 @@ int main() {
 
     Flota flota;
 
-    // Adaugam cateva vehicule manual
-    Vehicul v1("A01", "Autobuz", "Mercedes", 50);
-    Vehicul v2("T01", "Tren", "Siemens", 300);
-    Vehicul v3("V01", "Avion", "Boeing", 180);
+    // Adaugam vehicule folosind clasele derivate
+    flota.adaugaVehicul(
+        make_shared<Autobuz>("A01", "Mercedes", 50, 24)
+    );
 
-    flota.adaugaVehicul(v1);
-    flota.adaugaVehicul(move(v2)); // Vom folosi contrusctorul de mutare
-    flota.adaugaVehicul(v3);
+    flota.adaugaVehicul(
+        make_shared<Tren>("T01", "Siemens", 300, "Bucuresti-Cluj")
+    );
+
+    flota.adaugaVehicul(
+        make_shared<Avion>("V01", "Boeing", 180, "OTP", "JFK")
+    );
 
     // Afisam flota
     flota.afiseazaFlota();
 
-    cout << "\nNumar total de vehicule: " << flota.getNumarVehicule() << "\n";
+    cout << "\nNumar total de vehicule: "
+        << flota.getNumarVehicule() << "\n";
 
     cout << "\nProgram incheiat.\n";
     return 0;

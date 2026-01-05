@@ -24,10 +24,10 @@ public:
     Vehicul& operator=(Vehicul&& other) noexcept; // operator de mutare
 
     // Destructor
-    ~Vehicul();
+    virtual ~Vehicul();
 
     // Metoda pentru afisare
-    void afiseaza() const;
+    virtual void afiseaza() const;
 
     // Getters si setters
     string getId() const;

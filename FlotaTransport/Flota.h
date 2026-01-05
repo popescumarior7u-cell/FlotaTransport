@@ -1,15 +1,16 @@
 ﻿#pragma once
 #include <vector>
+#include <memory>
 #include "Vehicul.h"
 
 class Flota 
 {
 private:
-    vector<Vehicul> vehicule;
+    vector<shared_ptr<Vehicul>> vehicule;
 
 public:
     // Adauga un vehicul în flota?
-    void adaugaVehicul(const Vehicul& v);
+    void adaugaVehicul(shared_ptr<Vehicul> v);
 
     // Afiseaza? toate vehiculele
     void afiseazaFlota() const;
