@@ -18,6 +18,42 @@ int Flota::getNumarVehicule() const {
     return (int)vehicule.size();
 }
 
+bool Flota::stergeVehicul(const string& id) {
+    for (auto it = vehicule.begin(); it != vehicule.end(); ++it) {
+        if ((*it)->getId() == id) {
+            vehicule.erase(it);
+            return true;
+        }
+    }
+    return false;
+}
+
+void Flota::cautaDupaTip(const string& tip) const {
+    bool gasit = false;
+    for (const auto& v : vehicule) {
+        if (v->getTip() == tip) {
+            v->afiseaza();
+            gasit = true;
+        }
+    }
+    if (!gasit) {
+        cout << "Nu exista vehicule de tipul cautat.\n";
+    }
+}
+
+void Flota::filtreazaDupaCapacitate(int capacitateMinima) const {
+    bool gasit = false;
+    for (const auto& v : vehicule) {
+        if (v->getCapacitate() >= capacitateMinima) {
+            v->afiseaza();
+            gasit = true;
+        }
+    }
+    if (!gasit) {
+        cout << "Nu exista vehicule cu capacitatea ceruta.\n";
+    }
+}
+
 
 // Constructor implicit
 Flota::Flota() {

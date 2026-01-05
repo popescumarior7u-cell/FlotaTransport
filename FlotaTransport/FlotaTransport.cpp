@@ -11,6 +11,9 @@ void afiseazaMeniu() {
     cout << "\n=== MENIU FLOTA TRANSPORT ===\n";
     cout << "1. Adauga vehicul\n";
     cout << "2. Afiseaza flota\n";
+    cout << "3. Stergere vehicul\n";
+    cout << "4. Cauta vehicule dupa tip\n";
+    cout << "5. Filtreaza vehicule dupa capacitate\n";
     cout << "0. Iesire\n";
     cout << "Alege optiunea: ";
 }
@@ -73,6 +76,34 @@ int main() {
             flota.afiseazaFlota();
             cout << "Numar total vehicule: " << flota.getNumarVehicule() << "\n";
         }
+        else if (optiune == 3) {
+            string id;
+            cout << "Introdu ID vehicul de sters: ";
+            cin >> id;
+
+            if (flota.stergeVehicul(id))
+                cout << "Vehicul sters cu succes.\n";
+            else
+                cout << "Vehiculul nu a fost gasit.\n";
+        }
+        else if (optiune == 4) {
+            string tip;
+            cout << "Introdu tipul vehiculului (Autobuz / Tren / Avion): ";
+            cin >> tip;
+
+            flota.cautaDupaTip(tip);
+        }
+         else if (optiune == 5)
+            {
+            int cap;
+            cout << "Introdu capacitatea minima: ";
+            cin >> cap;
+
+            flota.filtreazaDupaCapacitate(cap);
+             }
+
+         
+
 
     } while (optiune != 0);
 

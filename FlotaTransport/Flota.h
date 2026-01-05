@@ -12,8 +12,18 @@ public:
     // Adauga un vehicul în flota?
     void adaugaVehicul(shared_ptr<Vehicul> v);
 
-    // Afiseaza? toate vehiculele
+    // Afiseaza toate vehiculele
     void afiseazaFlota() const;
+
+    // Stergere vehicul
+    bool stergeVehicul(const string& id);
+
+    // Cauta vehicul dupa tip
+    void cautaDupaTip(const string& tip) const;
+
+    // Filtreaza cautarea in functie de capacitatea vehiculului
+    void filtreazaDupaCapacitate(int capacitateMinima) const;
+
 
     // Returneaza numarul total de vehicule
     int getNumarVehicule() const;
@@ -25,4 +35,5 @@ public:
     Flota& operator=(const Flota& other); // operator de copiere
     Flota& operator=(Flota&& other) noexcept; // operator de mutare
     ~Flota();                             // destructor
+
 };
