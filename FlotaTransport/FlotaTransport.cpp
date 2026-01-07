@@ -140,6 +140,19 @@ int main() {
                      flota.actualizeazaStareVehicul(id);
              
                  }
+              else if (optiune == 7)
+                  {
+                      string start, stop;
+
+                      cout << "Statie plecare: ";
+                      cin >> start;
+
+                      cout << "Statie destinatie: ";
+                      cin >> stop;
+
+                      flota.gasesteRuta(start, stop);
+
+                  }
 
          
 
