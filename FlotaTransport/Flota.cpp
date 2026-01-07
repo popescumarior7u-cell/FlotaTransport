@@ -98,16 +98,18 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
 
         if (auto a = dynamic_pointer_cast<Autobuz>(v)) {
             if (a->getRuta().leaga(start, stop)) {
-                cout << "Ruta directa gasita (Autobuz):\n";
-                a->afiseaza();
+                cout << "Ruta directa gasita:\n";
+                cout << "Vehicul " << a->getId() << " (Autobuz): "
+                    << start << " -> " << stop << "\n";
                 return;
             }
         }
 
         if (auto t = dynamic_pointer_cast<Tren>(v)) {
             if (t->getRuta().leaga(start, stop)) {
-                cout << "Ruta directa gasita (Tren):\n";
-                t->afiseaza();
+                cout << "Ruta directa gasita:\n";
+                cout << "Vehicul " << t->getId() << " (Tren): "
+                    << start << " -> " << stop << "\n";
                 return;
             }
         }
@@ -136,9 +138,11 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                         if (a1->getRuta().leaga(start, statie) &&
                             a2->getRuta().leaga(statie, stop)) {
 
-                            cout << "Ruta cu schimb (Autobuz -> Autobuz):\n";
-                            a1->afiseaza();
-                            a2->afiseaza();
+                            cout << "Ruta gasita cu un singur schimb:\n";
+                            cout << "1) Autobuz " << a1->getId() << ": "
+                                << start << " -> " << statie << "\n";
+                            cout << "2) Autobuz " << a2->getId() << ": "
+                                << statie << " -> " << stop << "\n";
                             return;
                         }
                     }
@@ -148,9 +152,11 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                         if (a1->getRuta().leaga(start, statie) &&
                             t2->getRuta().leaga(statie, stop)) {
 
-                            cout << "Ruta cu schimb (Autobuz -> Tren):\n";
-                            a1->afiseaza();
-                            t2->afiseaza();
+                            cout << "Ruta gasita cu un singur schimb:\n";
+                            cout << "1) Autobuz " << a1->getId() << ": "
+                                << start << " -> " << statie << "\n";
+                            cout << "2) Tren " << t2->getId() << ": "
+                                << statie << " -> " << stop << "\n";
                             return;
                         }
                     }
@@ -166,9 +172,11 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                         if (t1->getRuta().leaga(start, statie) &&
                             a2->getRuta().leaga(statie, stop)) {
 
-                            cout << "Ruta cu schimb (Tren -> Autobuz):\n";
-                            t1->afiseaza();
-                            a2->afiseaza();
+                            cout << "Ruta gasita cu un singur schimb:\n";
+                            cout << "1) Tren " << t1->getId() << ": "
+                                << start << " -> " << statie << "\n";
+                            cout << "2) Autobuz " << a2->getId() << ": "
+                                << statie << " -> " << stop << "\n";
                             return;
                         }
                     }
@@ -178,9 +186,11 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                         if (t1->getRuta().leaga(start, statie) &&
                             t2->getRuta().leaga(statie, stop)) {
 
-                            cout << "Ruta cu schimb (Tren -> Tren):\n";
-                            t1->afiseaza();
-                            t2->afiseaza();
+                            cout << "Ruta gasita cu un singur schimb:\n";
+                            cout << "1) Tren " << t1->getId() << ": "
+                                << start << " -> " << statie << "\n";
+                            cout << "2) Tren " << t2->getId() << ": "
+                                << statie << " -> " << stop << "\n";
                             return;
                         }
                     }
@@ -191,6 +201,7 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
 
     cout << "Nu exista ruta disponibila intre cele doua statii.\n";
 }
+
 
 
 // Constructor implicit
