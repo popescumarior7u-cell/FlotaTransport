@@ -3,14 +3,22 @@
 #include <iostream>
 using namespace std;
 
+enum class StareVehicul {
+    Disponibil,
+    Indisponibil
+};
+
+
 class Vehicul {
 private:
     string id;
     string tip;
     string marca;
     int capacitate;
+    StareVehicul stare;
 
 public:
+
     // Constructor implicit
     Vehicul();
 
@@ -39,4 +47,6 @@ public:
     void setTip(string tipNou);
     void setMarca(string marcaNoua);
     void setCapacitate(int capacitateNoua);
+    StareVehicul getStare() const;
+    void setStare(StareVehicul stareNoua);
 };

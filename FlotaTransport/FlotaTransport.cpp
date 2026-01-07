@@ -14,6 +14,7 @@ void afiseazaMeniu() {
     cout << "3. Stergere vehicul\n";
     cout << "4. Cauta vehicule dupa tip\n";
     cout << "5. Filtreaza vehicule dupa capacitate\n";
+    cout << "6. Actualizare stare vehicul\n";
     cout << "0. Iesire\n";
     cout << "Alege optiunea: ";
 }
@@ -101,6 +102,15 @@ int main() {
 
             flota.filtreazaDupaCapacitate(cap);
              }
+              else if (optiune == 6)
+                 {
+                     string id;
+                     cout << "Introdu ID-ul vehiculului: ";
+                     cin >> id;
+
+                     flota.actualizeazaStareVehicul(id);
+             
+                 }
 
          
 

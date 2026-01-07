@@ -16,8 +16,7 @@ Functionalitati principale
 
    * Tipul vehiculului (autobuz, tren, avion).
    * Capacitate (numar de pasageri).
-   * Viteza maxima.
-   * Stare curenta (disponibil, in intretinere, in curs de utilizare).
+   * Stare curenta (disponibil, in curs de utilizare).
    * Alte atribute specifice fiecarui tip de vehicul (ex: linia pentru autobuz, ruta pentru tren, aeroporturile pentru avion).
 
 3. Gestionarea rutelor si programelor
@@ -27,8 +26,6 @@ Functionalitati principale
 4. Functionalitati de filtrare si cautare
 
    * Cautarea vehiculului dupa tip, capacitate sau stare.
-  // * Filtrarea vehiculelor disponibile pentru o anumita ruta sau data.
-  // * Raportarea vehiculelor care necesita intretinere.
 
 5. Extensibilitate
 

@@ -54,6 +54,36 @@ void Flota::filtreazaDupaCapacitate(int capacitateMinima) const {
     }
 }
 
+void Flota::actualizeazaStareVehicul(const string& id) {
+    for (auto& v : vehicule) {
+        if (v->getId() == id) {
+            cout << "Alege noua stare:\n";
+            cout << "0 - Disponibil\n";
+            cout << "1 - Indisponibil\n";
+
+            int opt;
+            cin >> opt;
+
+            if (opt == 0) {
+                v->setStare(StareVehicul::Disponibil);
+            }
+            else if (opt == 1) {
+                v->setStare(StareVehicul::Indisponibil);
+            }
+            else {
+                cout << "Optiune invalida.\n";
+                return;
+            }
+
+            cout << "Stare actualizata cu succes.\n";
+            return;
+        }
+    }
+
+    cout << "Vehiculul nu a fost gasit.\n";
+}
+
+
 
 // Constructor implicit
 Flota::Flota() {

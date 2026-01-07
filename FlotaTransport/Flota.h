@@ -24,6 +24,9 @@ public:
     // Filtreaza cautarea in functie de capacitatea vehiculului
     void filtreazaDupaCapacitate(int capacitateMinima) const;
 
+    // Actualizeaza starea vehiculului in functie de disponibilitate
+    void actualizeazaStareVehicul(const string& id);
+
 
     // Returneaza numarul total de vehicule
     int getNumarVehicule() const;
