@@ -33,6 +33,9 @@
     <ClCompile Include="Vehicul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ruta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Autobuz.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vehicul.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ruta.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

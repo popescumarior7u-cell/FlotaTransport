@@ -127,6 +127,7 @@
     <ClCompile Include="Avion.cpp" />
     <ClCompile Include="Flota.cpp" />
     <ClCompile Include="FlotaTransport.cpp" />
+    <ClCompile Include="Ruta.cpp" />
     <ClCompile Include="Tren.cpp" />
     <ClCompile Include="Vehicul.cpp" />
   </ItemGroup>
@@ -134,6 +135,7 @@
     <ClInclude Include="Autobuz.h" />
     <ClInclude Include="Avion.h" />
     <ClInclude Include="Flota.h" />
+    <ClInclude Include="Ruta.h" />
     <ClInclude Include="Tren.h" />
     <ClInclude Include="Vehicul.h" />
   </ItemGroup>

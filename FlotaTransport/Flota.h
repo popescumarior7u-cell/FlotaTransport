@@ -27,6 +27,8 @@ public:
     // Actualizeaza starea vehiculului in functie de disponibilitate
     void actualizeazaStareVehicul(const string& id);
 
+    ///Cautarea rutei directe iar apoi rutei cu un singur schimb
+    void gasesteRuta(const string& start, const string& stop) const;
 
     // Returneaza numarul total de vehicule
     int getNumarVehicule() const;

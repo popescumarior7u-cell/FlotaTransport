@@ -15,6 +15,7 @@ void afiseazaMeniu() {
     cout << "4. Cauta vehicule dupa tip\n";
     cout << "5. Filtreaza vehicule dupa capacitate\n";
     cout << "6. Actualizare stare vehicul\n";
+    cout << "7. Gaseste ruta intre 2 statii\n";
     cout << "0. Iesire\n";
     cout << "Alege optiunea: ";
 }
@@ -51,15 +52,43 @@ int main() {
                 cout << "Linie autobuz: ";
                 cin >> linie;
 
-                flota.adaugaVehicul(make_shared<Autobuz>(id, marca, capacitate, linie));
+                int nrStatii;
+                cout << "Numar statii pe ruta: ";
+                cin >> nrStatii;
+
+                vector<string> statii;
+                for (int i = 0; i < nrStatii; i++) {
+                    string s;
+                    cout << "Statie " << i + 1 << ": ";
+                    cin >> s;
+                    statii.push_back(s);
+                }
+
+                Ruta ruta(statii);
+
+                flota.adaugaVehicul(
+                    make_shared<Autobuz>(id, marca, capacitate, linie, ruta)
+                );
+
             }
             else if (tip == 2) {
-                string ruta;
-                cout << "Ruta tren: ";
-                cin.ignore();
-                getline(cin, ruta);
+                int nrStatii;
+                cout << "Numar statii pe ruta: ";
+                cin >> nrStatii;
 
-                flota.adaugaVehicul(make_shared<Tren>(id, marca, capacitate, ruta));
+                vector<string> statii;
+                for (int i = 0; i < nrStatii; i++) {
+                    string s;
+                    cout << "Statie " << i + 1 << ": ";
+                    cin >> s;
+                    statii.push_back(s);
+                }
+
+                Ruta ruta(statii);
+
+                flota.adaugaVehicul(
+                    make_shared<Tren>(id, marca, capacitate, ruta)
+                );
             }
             else if (tip == 3) {
                 string plecare, destinatie;

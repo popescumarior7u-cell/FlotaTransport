@@ -83,6 +83,114 @@ void Flota::actualizeazaStareVehicul(const string& id) {
     cout << "Vehiculul nu a fost gasit.\n";
 }
 
+#include "Autobuz.h"
+#include "Tren.h"
+
+void Flota::gasesteRuta(const string& start, const string& stop) const {
+    cout << "\n--- Cautare ruta de la " << start << " la " << stop << " ---\n";
+
+    // =========================
+    // 1. Ruta directa
+    // =========================
+    for (const auto& v : vehicule) {
+        if (v->getStare() != StareVehicul::Disponibil)
+            continue;
+
+        if (auto a = dynamic_pointer_cast<Autobuz>(v)) {
+            if (a->getRuta().leaga(start, stop)) {
+                cout << "Ruta directa gasita (Autobuz):\n";
+                a->afiseaza();
+                return;
+            }
+        }
+
+        if (auto t = dynamic_pointer_cast<Tren>(v)) {
+            if (t->getRuta().leaga(start, stop)) {
+                cout << "Ruta directa gasita (Tren):\n";
+                t->afiseaza();
+                return;
+            }
+        }
+    }
+
+    // =========================
+    // 2. Ruta cu un singur schimb
+    // =========================
+    for (const auto& v1 : vehicule) {
+        if (v1->getStare() != StareVehicul::Disponibil)
+            continue;
+
+        for (const auto& v2 : vehicule) {
+            if (v2->getStare() != StareVehicul::Disponibil)
+                continue;
+
+            if (v1 == v2)
+                continue;
+
+            // -------- v1 Autobuz --------
+            if (auto a1 = dynamic_pointer_cast<Autobuz>(v1)) {
+                for (const auto& statie : a1->getRuta().getStatii()) {
+
+                    // Autobuz -> Autobuz
+                    if (auto a2 = dynamic_pointer_cast<Autobuz>(v2)) {
+                        if (a1->getRuta().leaga(start, statie) &&
+                            a2->getRuta().leaga(statie, stop)) {
+
+                            cout << "Ruta cu schimb (Autobuz -> Autobuz):\n";
+                            a1->afiseaza();
+                            a2->afiseaza();
+                            return;
+                        }
+                    }
+
+                    // Autobuz -> Tren
+                    if (auto t2 = dynamic_pointer_cast<Tren>(v2)) {
+                        if (a1->getRuta().leaga(start, statie) &&
+                            t2->getRuta().leaga(statie, stop)) {
+
+                            cout << "Ruta cu schimb (Autobuz -> Tren):\n";
+                            a1->afiseaza();
+                            t2->afiseaza();
+                            return;
+                        }
+                    }
+                }
+            }
+
+            // -------- v1 Tren --------
+            if (auto t1 = dynamic_pointer_cast<Tren>(v1)) {
+                for (const auto& statie : t1->getRuta().getStatii()) {
+
+                    // Tren -> Autobuz
+                    if (auto a2 = dynamic_pointer_cast<Autobuz>(v2)) {
+                        if (t1->getRuta().leaga(start, statie) &&
+                            a2->getRuta().leaga(statie, stop)) {
+
+                            cout << "Ruta cu schimb (Tren -> Autobuz):\n";
+                            t1->afiseaza();
+                            a2->afiseaza();
+                            return;
+                        }
+                    }
+
+                    // Tren -> Tren
+                    if (auto t2 = dynamic_pointer_cast<Tren>(v2)) {
+                        if (t1->getRuta().leaga(start, statie) &&
+                            t2->getRuta().leaga(statie, stop)) {
+
+                            cout << "Ruta cu schimb (Tren -> Tren):\n";
+                            t1->afiseaza();
+                            t2->afiseaza();
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "Nu exista ruta disponibila intre cele doua statii.\n";
+}
 
 
 // Constructor implicit

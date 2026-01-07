@@ -1,11 +1,14 @@
 #pragma once
 #include "Vehicul.h"
+#include "Ruta.h"
 
 class Tren : public Vehicul {
 private:
-    string ruta;
+ 
+    Ruta ruta;
 
 public:
-    Tren(string id, string marca, int capacitate, string ruta);
-    void afiseaza() const;
+    Tren(string id, string marca, int capacitate, const Ruta& ruta);
+    const Ruta& getRuta() const;
+    void afiseaza() const override;
 };
