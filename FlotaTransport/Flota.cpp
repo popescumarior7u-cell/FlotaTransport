@@ -101,6 +101,10 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                 cout << "Ruta directa gasita:\n";
                 cout << "Vehicul " << a->getId() << " (Autobuz): "
                     << start << " -> " << stop << "\n";
+
+                cout << "   Detalii vehicul:\n";
+                a->Vehicul::afiseaza();
+                cout << "\n";
                 return;
             }
         }
@@ -110,6 +114,10 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                 cout << "Ruta directa gasita:\n";
                 cout << "Vehicul " << t->getId() << " (Tren): "
                     << start << " -> " << stop << "\n";
+
+                cout << "   Detalii vehicul:\n";
+                t->Vehicul::afiseaza();
+                cout << "\n";
                 return;
             }
         }
@@ -141,8 +149,18 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                             cout << "Ruta gasita cu un singur schimb:\n";
                             cout << "1) Autobuz " << a1->getId() << ": "
                                 << start << " -> " << statie << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            a1->Vehicul::afiseaza();
+                            cout << "\n";
+
                             cout << "2) Autobuz " << a2->getId() << ": "
                                 << statie << " -> " << stop << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            a2->Vehicul::afiseaza();
+                            cout << "\n";
+
                             return;
                         }
                     }
@@ -155,8 +173,18 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                             cout << "Ruta gasita cu un singur schimb:\n";
                             cout << "1) Autobuz " << a1->getId() << ": "
                                 << start << " -> " << statie << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            a1->Vehicul::afiseaza();
+                            cout << "\n";
+
                             cout << "2) Tren " << t2->getId() << ": "
                                 << statie << " -> " << stop << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            t2->Vehicul::afiseaza();
+                            cout << "\n";
+
                             return;
                         }
                     }
@@ -175,8 +203,18 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                             cout << "Ruta gasita cu un singur schimb:\n";
                             cout << "1) Tren " << t1->getId() << ": "
                                 << start << " -> " << statie << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            t1->Vehicul::afiseaza();
+                            cout << "\n";
+
                             cout << "2) Autobuz " << a2->getId() << ": "
                                 << statie << " -> " << stop << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            a2->Vehicul::afiseaza();
+                            cout << "\n";
+
                             return;
                         }
                     }
@@ -189,8 +227,18 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                             cout << "Ruta gasita cu un singur schimb:\n";
                             cout << "1) Tren " << t1->getId() << ": "
                                 << start << " -> " << statie << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            t1->Vehicul::afiseaza();
+                            cout << "\n";
+
                             cout << "2) Tren " << t2->getId() << ": "
                                 << statie << " -> " << stop << "\n";
+
+                            cout << "   Detalii vehicul:\n";
+                            t2->Vehicul::afiseaza();
+                            cout << "\n";
+
                             return;
                         }
                     }
