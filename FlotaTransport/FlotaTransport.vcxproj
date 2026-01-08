@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
+    <Text Include="date_intrare.txt" />
     <Text Include="Functionalitati.txt" />
     <Text Include="Rezumat.txt" />
   </ItemGroup>

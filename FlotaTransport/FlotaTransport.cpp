@@ -4,6 +4,8 @@
 #include "Autobuz.h"
 #include "Tren.h"
 #include "Avion.h"
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -19,9 +21,72 @@ void afiseazaMeniu() {
     cout << "0. Iesire\n";
     cout << "Alege optiunea: ";
 }
+void citesteDinFisier(const string& numeFisier, Flota& flota) {
+    ifstream fin(numeFisier);
+
+    if (!fin) {
+        cout << "Eroare la deschiderea fisierului!\n";
+        return;
+    }
+
+    string linie;
+    while (getline(fin, linie)) {
+        if (linie.empty()) continue;
+
+        stringstream ss(linie);
+        string tip;
+        ss >> tip;
+
+        if (tip == "AUTOBUZ") {
+            string id, marca;
+            int capacitate, linieNr;
+            ss >> id >> marca >> capacitate >> linieNr;
+
+            vector<string> statii;
+            string statie;
+            while (ss >> statie)
+                statii.push_back(statie);
+
+            Ruta ruta(statii);
+            flota.adaugaVehicul(
+                make_shared<Autobuz>(id, marca, capacitate, linieNr, ruta)
+            );
+        }
+        else if (tip == "TREN") {
+            string id, marca;
+            int capacitate;
+            ss >> id >> marca >> capacitate;
+
+            vector<string> statii;
+            string statie;
+            while (ss >> statie)
+                statii.push_back(statie);
+
+            Ruta ruta(statii);
+            flota.adaugaVehicul(
+                make_shared<Tren>(id, marca, capacitate, ruta)
+            );
+        }
+        else if (tip == "AVION") {
+            string id, marca, plecare, destinatie;
+            int capacitate;
+            ss >> id >> marca >> capacitate >> plecare >> destinatie;
+
+            flota.adaugaVehicul(
+                make_shared<Avion>(id, marca, capacitate, plecare, destinatie)
+            );
+        }
+    }
+
+    fin.close();
+}
+
 
 int main() {
     Flota flota;
+
+    citesteDinFisier("date_intrare.txt", flota);
+
     int optiune;
 
     do {

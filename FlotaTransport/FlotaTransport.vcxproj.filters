@@ -67,6 +67,7 @@
     <Text Include="CMakeLists.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="date_intrare.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
