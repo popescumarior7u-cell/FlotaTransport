@@ -1,5 +1,5 @@
-AUTOBUZ A01 Mercedes 50 24 A B C D
+AUTOBUZ A01 Mercedes 50 24 Zalau B C G
 AUTOBUZ A02 MAN 40 12 C D E F
-TREN T01 Siemens 300 Bucuresti Brasov Sibiu Cluj
+TREN T01 Siemens 300 Bucuresti Brasov Sibiu G
 TREN T02 Alstom 250 Iasi Bacau Brasov
 AVION V01 Boeing 180 OTP JFK
