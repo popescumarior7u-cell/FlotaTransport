@@ -97,7 +97,7 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
             continue;
 
         if (auto a = dynamic_pointer_cast<Autobuz>(v)) {
-            if (a->getRuta().leaga(start, stop)) {
+            if (a->getRuta().leagaBidirectional(start, stop)) {
                 cout << "Ruta directa gasita:\n";
                 cout << "Vehicul " << a->getId() << " (Autobuz): "
                     << start << " -> " << stop << "\n";
@@ -110,7 +110,7 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
         }
 
         if (auto t = dynamic_pointer_cast<Tren>(v)) {
-            if (t->getRuta().leaga(start, stop)) {
+            if (t->getRuta().leagaBidirectional(start, stop)) {
                 cout << "Ruta directa gasita:\n";
                 cout << "Vehicul " << t->getId() << " (Tren): "
                     << start << " -> " << stop << "\n";
@@ -168,7 +168,7 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
                     // Autobuz -> Tren
                     if (auto t2 = dynamic_pointer_cast<Tren>(v2)) {
                         if (a1->getRuta().leaga(start, statie) &&
-                            t2->getRuta().leaga(statie, stop)) {
+                            t2->getRuta().leagaBidirectional(statie, stop)) {
 
                             cout << "Ruta gasita cu un singur schimb:\n";
                             cout << "1) Autobuz " << a1->getId() << ": "
@@ -197,7 +197,7 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
 
                     // Tren -> Autobuz
                     if (auto a2 = dynamic_pointer_cast<Autobuz>(v2)) {
-                        if (t1->getRuta().leaga(start, statie) &&
+                        if (t1->getRuta().leagaBidirectional(start, statie) &&
                             a2->getRuta().leaga(statie, stop)) {
 
                             cout << "Ruta gasita cu un singur schimb:\n";
@@ -221,8 +221,8 @@ void Flota::gasesteRuta(const string& start, const string& stop) const {
 
                     // Tren -> Tren
                     if (auto t2 = dynamic_pointer_cast<Tren>(v2)) {
-                        if (t1->getRuta().leaga(start, statie) &&
-                            t2->getRuta().leaga(statie, stop)) {
+                        if (t1->getRuta().leagaBidirectional(start, statie) &&
+                            t2->getRuta().leagaBidirectional(statie, stop)) {
 
                             cout << "Ruta gasita cu un singur schimb:\n";
                             cout << "1) Tren " << t1->getId() << ": "

@@ -15,5 +15,6 @@ public:
 
     bool contineStatia(const string& statie) const;
     bool leaga(const string& start, const string& stop) const;
+    bool leagaBidirectional(const string& a, const string& b) const;
 };
 

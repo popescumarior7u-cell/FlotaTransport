@@ -23,3 +23,6 @@ bool Ruta::leaga(const string& start, const string& stop) const {
     }
     return false;
 }
+bool Ruta::leagaBidirectional(const string& a, const string& b) const {
+    return contineStatia(a) && contineStatia(b);
+}
